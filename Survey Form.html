@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        #survey-form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #survey-form input, select, textarea{
+            width: 50%;
+        }
+
+        #radio, #checkbox, #submit{
+            max-width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Survey form with inputs</p>
+    <form id="survey-form">
+        <label for="name" id="name-label">Name:</label>
+        <input type="text" id="name" placeholder="First name Last name" required>
+
+        <label for="email" id="email-label">E-mail:</label>
+        <input type="email" id="email" placeholder="email@example.com" required>
+
+        <label for="numer" id="number-label">Number</label>
+        <input type="number" id="number" placeholder="e.g. 123456789" min="4" max="11">
+
+        <label for="dropdown">Option:</label>
+        <select id="dropdown">
+            <option value="option 1">option 1</option>
+            <option value="option 2">option 2</option>
+        </select>
+
+        <label> 
+            Variant 1
+            <input type="radio" id="radio" value ="variant 1" name="variants">
+        </label>
+        <label>
+            Variant 2
+             <input type="radio" id="radio" value ="variant 2" name="variants">
+        </label>
+
+        <label> 1<input type="checkbox" value="1" id="checkbox"></label>
+        <label> 2<input type="checkbox" value="2" id="checkbox"></label>
+        <label> 3<input type="checkbox" value="3" id="checkbox"></label>
+        <label> 4<input type="checkbox" value="4" id="checkbox"></label>
+
+        <textarea placeholder="additional comments"></textarea>
+
+        <button type="submit" id="submit">Submit</button>
+       
+       
+    </form>
+</body>
+</html>

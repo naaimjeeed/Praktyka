@@ -1,0 +1,246 @@
+:root{
+    --main: #283618; 
+    --accent: #606c38;  
+    --background: #fefae0;
+    --background2: #dda15e; 
+    --font: #bc6c25;  
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--main);
+    font-family: Helvetica;
+}
+
+header{
+    position: fixed;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10vh;
+    background-color: var(--background);
+    box-shadow: 0 0 3px rgba(0,0,0,0.15);
+    color: var(--main);
+    width: 100%;
+    scroll-margin-top: 10vh; 
+    z-index: 1000;
+    padding: 0 2rem;
+}
+#bike-features,
+#bike-offer,
+#bike-video {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    padding-top: 12vh;
+}
+
+#header-img{
+    height: 60%;
+    width: auto;
+    max-height: 10vh;
+}
+
+#nav-bar{
+    width: 30%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link{
+    color: var(--main);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: var(--accent);
+}
+
+h2, h3{
+    color: var(--font)
+}
+
+#submit{
+    background: var(--background2);
+}
+
+#submit:hover{
+    background: var(--accent);
+}
+
+#main-email{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+#main-email h1{
+    font-size: 3rem;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+#form input[type="submit"]{
+    width: 50%;
+    display: block;
+    margin: 1rem auto 0 auto;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.bike-features-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    justify-items: center;
+    width: 100%;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sign {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main);
+}
+
+#bike-features{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.feature{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--accent);
+    color: var(--background2);
+    border-radius: 3px;
+    border: 1px var(--accent);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--background);
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#bike-video{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#bike-offer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+    padding: 1rem 0 1rem 0;
+    gap: 1rem;
+}
+
+.bike-tabs{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bike{
+    width: 100%;
+    display: flex;
+    max-width: 300px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--accent);
+    color: var(--background);
+    border-radius: 3px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border: 1px var(--accent);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--background);
+}
+
+.feature p {
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+    #nav-bar{
+        font-size: 0.9rem;
+        width: 50%;
+    }
+
+    #main-email{
+        gap: 2rem;
+        margin: 2rem 0 2rem 0;
+    }
+
+    #form input[type="submit"]{
+        margin: 1rem auto 3rem auto;
+    }
+
+    #bike-features{
+        margin: 2rem auto;
+
+    
+}
+}

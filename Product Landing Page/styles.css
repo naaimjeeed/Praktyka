@@ -1,72 +1,295 @@
-:root{
-    --main: #283618; 
-    --accent: #606c38;  
-    --accent2: #acb884;
-    --background: #fefae0;
-    --background2: #dda15e; 
-    --font: #bc6c25;  
+:root {
+    --primary-orange: #F77F00;
+    --primary-red: #D00000;
+    --dark-red: #6A040F;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --text-black: #1B1B1B;
+    --text-white: #FFFFFF;
+    --main: #1B1B1B;
+    --accent: #D00000;
+    --accent2: #DC2F02;
+    --background: #FFF4E6;
+    --background2: #FFE8D6;
+    --font: #4A4A4A;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
-    background-color: var(--background);
-    color: var(--main);
-    font-family: Helvetica;
+body {
+    background: linear-gradient(135deg, #FFF4E6 0%, #FFE8D6 100%);
+    color: var(--text-black);
+    font-family: 'Inter', Helvetica, sans-serif;
 }
 
-header{
+#header {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10vh;
-    background-color: var(--background);
-    box-shadow: 0 0 3px rgba(0,0,0,0.15);
-    color: var(--main);
-    width: 100%;
-    scroll-margin-top: 10vh; 
-    z-index: 1000;
     padding: 0 2rem;
+    background: transparent;
+    color: var(--main);
+    z-index: 1000;
+    scroll-margin-top: 10vh;
+    font-weight: 700;
 }
-#bike-features, #bike-offer, #bike-video {
-    padding: 4rem 2rem;
+
+#header.scrolled {
+    background: red;
+    transition: 0.3s ease-in;
+}
+
+.company-logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    
 }
 
-main{
-    padding-top: 12vh;
-}
-
-#header-img{
+#header-img {
     height: 60%;
     width: auto;
-    max-height: 10vh;
+    max-height: 8vh;
 }
 
-#nav-bar{
-    width: 30%;
+.sign {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main);
+}
+
+#nav-bar {
+    width: 50%;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     gap: 1.5rem;
     position: relative;
-    flex-direction: row;
+    color: var(--text-black);
+    font-size: 1em;
 }
 
-.bike-info{
+#nav-bar button{
+    border: 3px solid black;
+    font-size: 1em;
+    padding: 0.7em;
+    width: 7vw;
+    background: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#nav-bar.active {
+    display: flex;
+}
+
+.nav-link {
+    color: var(--main);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+#hamburger-menu {
+    display: none;
+    width: 5vh;
+    height: auto;
+}
+
+main {
+    padding-top: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'hero bike-video'
+        'features features '
+        'bike-offer footer';
+    background: linear-gradient(100deg, var(--background2) 5%, var(--primary-orange) 50%, var(--primary-red) 100%);
+}
+
+
+#main-hero {
+    grid-area: hero;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+#main-hero h1 {
+    font-size: 3rem;
+}
+
+#bike-features {
+    top: -20;
+    grid-area: features;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+}
+
+#bike-features h2 {
+    color: var(--font);
+}
+
+.bike-features-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    width: 100%;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 23px rgba(0,0,0,0.08);
+}
+
+.feature h3 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    min-height: 2.4em;
+    align-items: center;
+    line-height: 1.3;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-black);
+}
+
+.feature p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-black);
+}
+
+.feature-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    top: 0;
+}
+
+.feature-header img{
+    width: 30%;
+    max-height: 10vh;
+    color: var(--accent);
+    object-fit: contain;
+}
+
+
+#bike-video {
+    grid-area: bike-video;
+    margin: 3rem 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 360px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 23px rgba(0,0,0,0.08);
+
+}
+
+
+#video {
+    backdrop-filter: blur(8px);
+    border-radius: 360px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 23px rgba(0,0,0,0.08);
+    width: 100%;
+
+}
+
+#bike-offer {
+    grid-area: bike-offer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+#bike-offer, #main-email{
+    background-color: var(--background2);
+}
+
+#bike-offer h2 {
+    color: var(--font);
+    font-size: 2rem;
+}
+
+.bike-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 2rem;
+}
+
+.bike {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    color: var(--text-black);
+    border-radius: 3px;
+    border: 1px var(--accent);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.bike-specs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-img img{
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}
+
+.bike-info {
     background-color: var(--accent2);
     padding: 1.5em 1em;
     display: flex;
@@ -76,63 +299,28 @@ main{
     border-radius: 3px;
 }
 
-.bike-specs{
-    color: var(--background);
-}
-
-.bike-info ul{
+.bike-info ul {
     list-style: none;
     padding-left: 0;
-    margin: 0; 
+    margin: 0;
     color: var(--background);
 }
 
-#nav-bar.active{
-    display: flex;
+#main-email {
+    grid-area: footer;
 }
 
-.nav-link{
-    color: var(--main);
-    text-decoration: none;
-}
-
-.nav-link:hover{
-    color: var(--accent);
-}
-
-#bike-features h2, #bike-offer h2{
-    color: var(--font);
-}
-
-#submit{
-    background: var(--background2);
-}
-
-#submit:hover{
-    background: var(--accent);
-}
-
-#main-email{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 2rem;
-}
-
-#main-email h1{
-    font-size: 3rem;
-}
-
-#form{
+#form {
     display: flex;
     flex-direction: column;
 }
 
-#form input[type="submit"]{
+#form input[type="hero"] {
+    border: none;
+    padding: 10px 3px;
+}
+
+#form input[type="submit"] {
     width: 50%;
     display: block;
     margin: 1rem auto 0 auto;
@@ -141,207 +329,70 @@ main{
     border-radius: 3px;
 }
 
-#form input[type="email"]{
-    border: none;
-    padding: 10px 3px;
+#submit {
+    background: var(--background2);
 }
 
-.bike-features-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    justify-items: center;
-    width: 100%;
+#submit:hover {
+    background: var(--accent);
 }
 
-.company-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.sign {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--main);
-}
-
-#bike-features{
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1vh;
-}
-
-.feature{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    padding: 2rem;
-    background-color: var(--accent);
-    color: var(--background2);
-    border-radius: 3px;
-    border: 1px var(--accent);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.feature h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--background);
-}
-
-.feature p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-#bike-video{
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-#bike-offer{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0 2rem 0;
-    padding: 1rem 0 1rem 0;
-    gap: 1rem;
-}
-
-.bike-tabs{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.bike{
-    width: 100%;
-    display: flex;
-    max-width: 300px;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    padding: 2rem;
-    background-color: var(--accent);
-    color: var(--background);
-    border-radius: 3px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    border: 1px var(--accent);
-}
-
-.feature h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--background);
-}
-
-.feature p {
-    display: flex;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-footer{
-    height: 10vh;
-    background-color: var(--accent);
-}
-
-#hamburger-menu{
-    display: none;
-    width: 5vh;
-    height: auto;
-}
-
-#video{
-     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-
-@media screen and (max-width: 768px){
-
-    #main-email{
-        gap: 2rem;
-        margin: 2rem 0 2rem 0;
-    }
-
-    #header-img{
-        padding: 1em;
-    }
-
-    #form input[type="submit"]{
-        margin: 1rem auto 3rem auto;
-        font-size: 1.5rem;
-        width: 6em;
-    }
-
-    #form input[type="email"]{
-        font-size: 1.5rem;
-    }
-
-    /* rozmiar emailu i inputu */
-
-    #bike-features{
-        margin: 2rem auto;
-    }
-   
-    .bike-features-grid{
-        grid-template-columns: 1fr;
-    }
-
-   .feature{
-        height: 30vh;
-        justify-content: center;
-        margin: 0;
-    }
-
-    #video{
-        width: 90vw;
-        height: auto;
-    }
-
-    #nav-bar{
-        width: 100vw;
-        border-bottom: 1px solid var(--accent);
-        background-color: var(--background);
-        padding: 2em;
-        position: absolute;
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        top: 10vh;
-        gap: 1rem;
-        font-size: 1rem;
-    }
-
-    #header{
+@media screen and (max-width: 768px) {
+    #header {
         padding: 0;
     }
 
-    #hamburger-menu{
+    #hamburger-menu {
         display: block;
         margin-right: 2em;
     }
 
-    #hamburger-icon{
+    #hamburger-icon {
         width: 40px;
         height: auto;
     }
 
-    
+    #nav-bar {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        top: 10vh;
+        width: 100vw;
+        padding: 2em;
+        background-color: var(--background);
+        border-bottom: 1px solid var(--accent);
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    #main-hero {
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .bike-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        height: 30vh;
+        margin: 0;
+    }
+
+    #video {
+        width: 90vw;
+        height: auto;
+    }
+
+    #form input[type="submit"] {
+        width: 6em;
+        margin: 1rem auto 3rem auto;
+        font-size: 1.5rem;
+    }
+
+    #form input[type="email"] {
+        font-size: 1.5rem;
+    }
 }

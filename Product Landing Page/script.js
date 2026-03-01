@@ -5,6 +5,7 @@ const signIn = document.getElementById("sign-in");
 
 hamburgerMenu.addEventListener("click", () =>{
     navbar.classList.toggle("active");
+    header.classList.toggle("active");
 });
 
 window.addEventListener("scroll", () => {

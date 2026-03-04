@@ -23,4 +23,10 @@ document.addEventListener("keydown", (e) =>{
 });
 
 
+// To jutro już, co się stanie jak pad nie będzie  istniało, albo element .clip nie będzie miał id?
+// Albo element key nie będzie istniał?
+
+// I jak się zabezpieczyć przed takimi przypadkami?
+// Elementy mogą zniknąć ze strony na dynamicznych stronach
+
 

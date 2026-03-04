@@ -26,7 +26,7 @@ vote = (option, voterId) =>{
     }
 }
 
-displayResults = (poll) =>{
+displayResults = () =>{
     let result = "Poll Results:\n";
     poll.forEach((value, key) => {
         result += `${key}: ${value.size} votes\n`;
@@ -45,6 +45,6 @@ console.log(vote("Algeria", "traveler1"));
 console.log(vote("Turkey", "traveler2"));
 console.log(vote("Turkey", "traveler3"));
 console.log(vote("Morocco", "traveler4"));
-console.log(displayResults(poll));
+console.log(displayResults());
 
 

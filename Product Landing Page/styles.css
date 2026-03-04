@@ -45,11 +45,11 @@ body {
     z-index: 1000;
     scroll-margin-top: 10vh;
     font-weight: 700;
+    transition: all 0.5s ease;
 }
 
 #header.scrolled {
     background: var(--gradient);
-    transition: 0.5s ease-in;
 }
 
 .company-logo {
@@ -149,9 +149,8 @@ main {
 }
 
 #bike-features {
-    top: -20;
     grid-area: features;
-    padding: 2rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -391,11 +390,11 @@ main {
 
 #submit {
     background: var(--background2);
-    transition: transform 0.3s ease; /* tutaj cos zmienic */
+    transition: transform 0.4s ease; 
 }
 
 #submit:hover {
-    background: var(--gradient); /* tutaj cos zmienic */
+    background: var(--gradient); 
 }
 
 #header.active{

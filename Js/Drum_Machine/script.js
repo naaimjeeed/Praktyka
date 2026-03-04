@@ -13,7 +13,8 @@ playSound = (key) =>{
 
 pads.forEach(pad =>{
     pad.addEventListener("click", () =>{
-        const key = pad.querySelector(".clip").id;
+       const key = pad.querySelector(".clip").id;
+       console.log(key); //kiedy element .clip nie ma id to key jest null
        playSound(key);
     });
 });
@@ -23,10 +24,11 @@ document.addEventListener("keydown", (e) =>{
 });
 
 
-// To jutro już, co się stanie jak pad nie będzie  istniało, albo element .clip nie będzie miał id?
-// Albo element key nie będzie istniał?
+//Co się stanie jak pad nie będzie istniał, albo element .clip nie będzie miał id?
+//Gdy clip nie ma id, to nie wyskakuje błąd, ale nic się nie dzieje po wywołaniu playSound(key)
 
 // I jak się zabezpieczyć przed takimi przypadkami?
-// Elementy mogą zniknąć ze strony na dynamicznych stronach
+//Ustawić domyślną wartość dla key / domyślny dźwięk w przypadku kiedy jest null 
+
 
 

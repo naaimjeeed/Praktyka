@@ -1,0 +1,17 @@
+//taskData.unshift(taskObj); //used to add one or more elements to the beginning of an array.
+
+//LEPSZY SPOSÓB, ALE NIE PRZECHODZI
+// const task = document.createElement('div');
+// task.classList.add('task');
+// task.id = id;
+// tasksContainer.appendChild(task);
+
+//confirmCloseDialog.showModal(); //method that can be used to display a modal dialog box on a web page.
+
+// cancelBtn.addEventListener("click", function() {
+//     confirmCloseDialog.close(); //close a modal dialog box on a web page.
+// });
+
+cancelBtn.addEventListener("click", () => confirmCloseDialog.close()); //close a modal dialog box on a web page.
+
+this is a keyword that refers to the current context. In this case, this points to the element that triggers the event – the buttons.

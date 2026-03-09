@@ -75,12 +75,14 @@ viewCategoryButton.addEventListener("click", () => {
 const renderCategoryList = (category) => {
     const bookmarks = getBookmarks();
     categoryList.innerHTML = "";
+    deleteBookmarkButton.classList.toggle("hidden");
     const filteredBookmarks = bookmarks.filter(b => b.category === category);
     if(filteredBookmarks.length === 0){
         const p = document.createElement("p");
         p.innerText = "No Bookmarks Found";
          categoryList.appendChild(p);
     }else{
+        deleteBookmarkButton.classList.remove("hidden");
         filteredBookmarks.forEach(bookmark => {
         const radio = document.createElement("input");
         radio.type = "radio";

@@ -33,6 +33,12 @@ section {
   background-color: var(--glass-bg);
   backdrop-filter: blur(8px);
   border-radius: 12px;
+  margin-top: 60px;
+  border: 2px solid var(--glass-bg);
+  width: fit-content;
+  border-radius: 10px;
+  height: 40vh;
+  width: 20vw;
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 10px 23px rgba(0,0,0,0.08);
 }
@@ -102,13 +108,6 @@ button:hover {
    box-shadow: 10px  rgba(0,0,0,0.18);
 }
 
-section {
-  margin-top: 60px;
-  border: 2px solid var(--glass-bg);
-  width: fit-content;
-  border-radius: 10px;
-}
-
 a{
     text-decoration: none;
     cursor: pointer;
@@ -116,4 +115,16 @@ a{
 
 input{
     cursor: pointer;
+    border: none;
+    background-color: var(--dark-grey);
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
 }
+
+section form div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

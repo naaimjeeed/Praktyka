@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("bg.png");
+    background-size: cover;   
+    font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    width: 30vw;
+    margin: 3vh auto;
+    height: 20vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h2{
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+header button{
+    font-size: 1rem;
+    padding: 10px;
+    margin: 1em 0;
+}
+
+#weather-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.3rem;
+}
+
+#location {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#weather-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    justify-self: center;
+}
+
+#main-temperature {
+    font-size: 2rem;
+    font-weight: 700;
+    justify-self: center;
+}
+
+#weather-main,
+#feels-like,
+#humidity,
+#wind,
+#wind-gust {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#feels-like{
+    padding: 0 1.3rem ;
+}
+
+
+header, #weather-info, header button {
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 0 15px rgba(255,255,255,0.2);
+    border-radius: 15px;
+}
